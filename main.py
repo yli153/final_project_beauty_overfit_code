@@ -10,7 +10,12 @@ import argparse
 
 content_path = 'input/content/james.jpg'
 style_path = 'input/style/Vincent_van_Gogh_604.jpg'
-style_path_arr = ['input/style/Vincent_van_Gogh_69.jpg', 'input/style/Vincent_van_Gogh_604.jpg']
+style_path_arr = [
+    'input/style/Vincent_van_Gogh_59.jpg',
+    'input/style/Vincent_van_Gogh_69.jpg', 
+    'input/style/Vincent_van_Gogh_210.jpg',
+    'input/style/Vincent_van_Gogh_219.jpg',
+    'input/style/Vincent_van_Gogh_604.jpg']
 
 #image.py用的github上的原码，我过几天再更新一版
 
