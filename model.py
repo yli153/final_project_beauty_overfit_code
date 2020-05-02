@@ -86,7 +86,7 @@ def get_feature(model, style_path, content_path, mode, color):
         for feature in content_feature_outputs[:num_content_layers]:
             content_feature_arr.append(feature[0])
 
-    elif mode == 'artist':
+    elif mode == 'artist_style':
         styles = []
         for path in style_path:
             style = image.pre_process_img(path)
@@ -149,12 +149,12 @@ def loss(model,loss_weights,init_image,content_features,style_features,mode):
     total_style_loss = 0
     total_content_loss = 0
     
-    if mode == 'original' or mode == 'color_transfer':
+    if mode == 'original' or mode == 'color_trans':
         style_layer_weight = 1.0/ float(num_style_layers)
         for i in range(len(style_features)): 
             total_style_loss = total_style_loss + style_layer_weight * style_loss(style_features[i], gen_style_feature[i])
     
-    elif mode == 'artist':
+    elif mode == 'artist_style':
         style_layer_weight = 1.0/ float(num_style_layers)
         style_painting_weight = 1.0/ float(len(style_features))
         for style in style_features:
@@ -182,7 +182,7 @@ def compute_grads(cfg):
     return tape.gradient(total_loss,cfg['init_image']),allloss
 
 
-def run(content_path, style_path, algorithm, mode, color, iteration):
+def run(content_path, style_path, algorithm, mode, color, artist, iteration):
 
     content_weight = 1e3
     style_weight = 1
@@ -244,7 +244,7 @@ def run(content_path, style_path, algorithm, mode, color, iteration):
 
             img = init_image.numpy()
             img = image.deprocess_img(img)
-            path = 'output/output_' + str(i) + '_'+mode+'_'+color+'.jpg'
+            path = 'output/output_' + str(i) + '_'+mode+'_'+color+'_'+artist+'.jpg'
             image.saveimg(img, path)
             imgs.append(img)
 
