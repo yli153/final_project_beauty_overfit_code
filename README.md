@@ -1,5 +1,10 @@
 # final-project-beauty-overfit
 
+Group Name: Beauty Overfit
+Group Member: lyang39, xjiang5, ycui10, yli153
+
+
+
 Arguments:
 -al, --algorithm, 'original_nst', or 'portrait'. Default algorithm is original neural style transfer
 
