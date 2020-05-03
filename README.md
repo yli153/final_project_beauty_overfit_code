@@ -17,6 +17,8 @@ Arguments:
 Examples of Running with Arguments:
 
 python main.py
+
 python main.py -al portrait
+
 python main.py -al portrait -m artist_style -c cholesky -a artist2
 
