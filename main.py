@@ -1,7 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-
 import tensorflow as tf
 import os
 import image
@@ -60,7 +56,7 @@ if __name__ == "__main__":
         elif args.artist == 'artist2':
             style_path = artist2_style_path
         elif args.artist == 'artist3':
-            style_path == artist3_style_path
+            style_path = artist3_style_path
 
         best, best_loss = model.run(content_path, style_path, args.algorithm, args.mode, args.color, args.artist, iteration=1000)
     else:
@@ -70,7 +66,7 @@ if __name__ == "__main__":
         elif args.artist == 'artist2':
             style_path_arr = artist2_style_path_arr
         elif args.artist == 'artist3':
-            style_path_arr == artist3_style_path_arr
+            style_path_arr = artist3_style_path_arr
 
         best, best_loss = model.run(content_path, style_path_arr, args.algorithm, args.mode, args.color, args.artist, iteration=1000)
-    image.saveimg(best, 'output/best'+'_'+args.mode+'_'+args.color+'_'+args.artist+ '.jpg')
+    image.save(best, 'output/best'+'_'+args.algorithm+'_'+args.mode+'_'+args.color+'_'+args.artist+ '.jpg')
