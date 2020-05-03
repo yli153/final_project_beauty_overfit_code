@@ -1,7 +1,7 @@
 # final-project-beauty-overfit
 
-Group Name: Beauty Overfit
-Group Member: lyang39, xjiang5, ycui10, yli153
+##Group Name: Beauty Overfit
+##Group Member: lyang39, xjiang5, ycui10, yli153
 
 
 
