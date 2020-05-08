@@ -30,7 +30,6 @@ artist3_style_path_arr = [
     'input/style/artist3/Amedeo_Modigliani_6.jpg',
     'input/style/artist3/Amedeo_Modigliani_74.jpg']
 
-#image.py用的github上的原码，我过几天再更新一版
 
 if __name__ == "__main__":
 
